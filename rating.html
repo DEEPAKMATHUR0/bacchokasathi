@@ -54,6 +54,7 @@
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       padding: 10px;
       margin-top: 10px;
+      transition: max-height 0.3s ease-out;
     }
     .menu a {
       display: block;
@@ -88,18 +89,26 @@
       font-size: 2em;
       color: gold;
       cursor: pointer;
+      transition: color 0.3s;
+    }
+    .star.selected {
+      color: darkorange; /* Change the color for selected stars */
     }
   </style>
   <script>
+    let currentRating = 0;
+
     function toggleMenu() {
       const menu = document.getElementById('menu');
-      if (menu.style.display === 'block') {
-        menu.style.display = 'none';
-      } else {
-        menu.style.display = 'block';
-      }
+      menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
     }
+
     function rate(star) {
+      currentRating = star;
+      const stars = document.querySelectorAll('.star');
+      stars.forEach((s, index) => {
+        s.classList.toggle('selected', index < star); // Highlight selected stars
+      });
       alert('Thank you for your rating of ' + star + ' star' + (star > 1 ? 's' : '') + '!');
     }
   </script>
@@ -122,12 +131,12 @@
       <a href="rating.html">Rating</a>
     </div>
 
-    <div class="rating">
-      <span class="star" onclick="rate(1)">&#9733;</span>
-      <span class="star" onclick="rate(2)">&#9733;</span>
-      <span class="star" onclick="rate(3)">&#9733;</span>
-      <span class="star" onclick="rate(4)">&#9733;</span>
-      <span class="star" onclick="rate(5)">&#9733;</span>
+    <div class="rating" aria-label="Rate Us">
+      <span class="star" onclick="rate(1)" aria-label="1 star">&#9733;</span>
+      <span class="star" onclick="rate(2)" aria-label="2 stars">&#9733;</span>
+      <span class="star" onclick="rate(3)" aria-label="3 stars">&#9733;</span>
+      <span class="star" onclick="rate(4)" aria-label="4 stars">&#9733;</span>
+      <span class="star" onclick="rate(5)" aria-label="5 stars">&#9733;</span>
     </div>
     <p>Click on the stars above to rate us!</p>
   </div>

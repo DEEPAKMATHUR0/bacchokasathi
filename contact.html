@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - Baccho ka Sathi</title>
+  <style>
+    /* General styling for mobile responsiveness */
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+    .container {
+      padding: 20px;
+      max-width: 480px;
+      margin: auto;
+    }
+    .header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    h1 {
+      color: #4CAF50;
+      font-size: 2em;
+      margin: 10px 0;
+    }
+    p {
+      line-height: 1.6;
+    }
+    .menu-button {
+      display: block;
+      width: 100%;
+      padding: 12px;
+      background-color: #007bff;
+      color: #fff;
+      text-align: center;
+      font-size: 1.1em;
+      font-weight: bold;
+      border-radius: 5px;
+      text-decoration: none;
+      margin: 20px 0;
+      transition: background-color 0.3s;
+    }
+    .menu-button:hover {
+      background-color: #0056b3;
+    }
+    .menu {
+      display: none;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 10px;
+      margin-top: 10px;
+    }
+    .menu a {
+      display: block;
+      padding: 8px 0;
+      color: #007bff;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    .menu a:hover {
+      color: #0056b3;
+    }
+    .footer {
+      text-align: center;
+      padding: 15px;
+      background-color: #4CAF50;
+      color: white;
+      position: relative;
+      bottom: 0;
+      width: 100%;
+      margin-top: 20px;
+      border-radius: 5px;
+    }
+    .footer p {
+      margin: 5px 0;
+    }
+    form {
+      margin-top: 20px;
+    }
+    input[type="text"], input[type="email"], textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    input[type="submit"] {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      padding: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+      width: 100%;
+    }
+    input[type="submit"]:hover {
+      background-color: #45a049;
+    }
+  </style>
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('menu');
+      if (menu.style.display === 'block') {
+        menu.style.display = 'none';
+      } else {
+        menu.style.display = 'block';
+      }
+    }
+  </script>
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <div class="header">
+      <h1>Contact Us</h1>
+      <p>We'd love to hear from you!</p>
+    </div>
+
+    <!-- Menu Button -->
+    <button class="menu-button" onclick="toggleMenu()">Menu</button>
+    <div id="menu" class="menu">
+      <a href="home.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact</a>
+      <a href="chat.html">Chat</a>
+      <a href="rating.html">Rating</a>
+    </div>
+
+    <form action="#" method="post">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+      <input type="submit" value="Send Message">
+    </form>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <p>&copy; 2024 Baccho ka Sathi. All Rights Reserved.</p>
+    <p>Follow us on <a href="#" style="color: white; text-decoration: underline;">Facebook</a>, <a href="#" style="color: white; text-decoration: underline;">Twitter</a>, and <a href="#" style="color: white; text-decoration: underline;">Instagram</a>.</p>
+  </div>
+</body>
+</html>
